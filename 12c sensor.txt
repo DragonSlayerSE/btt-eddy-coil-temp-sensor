@@ -24,7 +24,7 @@ Steg 4: Klipper-konfiguration (printer.cfg)
 Låt ditt befintliga [probe_eddy_current btt_eddy]-block vara precis som det är. 
 Lägg till följande rader direkt under för att aktivera den nya temperatursensorn på samma mjukvaru-I²C-buss:ini
 
-[temperature_sensor eddy_intern_temp]
+[temperature_probe btt_eddy_coil] #same as your "CHIP" probe name
 sensor_type: SHT3X
 i2c_mcu: ebb
 i2c_software_scl_pin: ebb:PA7
