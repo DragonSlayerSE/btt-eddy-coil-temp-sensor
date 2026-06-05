@@ -21,7 +21,7 @@ Tryck försiktigt fast SHT31-D-modulen i limmet. Se till att inga öppna lödpun
 Låt limmet härda i 30–60 minuter innan du skruvar ihop höljet.
 
 Steg 4: Klipper-konfiguration (printer.cfg)
-Låt ditt befintliga [probe_eddy_current btt_eddy]-block vara precis som det är. 
+Låt ditt befintliga [probe_eddy_current btt_eddy_coil]-block vara precis som det är. 
 Lägg till följande rader direkt under för att aktivera den nya temperatursensorn på samma mjukvaru-I²C-buss:ini
 
 [temperature_probe btt_eddy_coil] #same as your "CHIP" probe name
@@ -37,12 +37,10 @@ Använd koden med försiktighet.
 Steg 5: Funktionstest och Kalibrering
 
 Spara inställningarna och klicka på Firmware Restart i Mainsail/Fluidd.
-Kontrollera att temperaturmätaren eddy_intern_temp dyker upp på din dashboard och visar rumstemperatur.
-För att verifiera att bussen hittar båda chippen kan du köra detta kommando i terminalen:
-I2C_SCAN MCU=ebb BUS=i2c3a (eller det mjukvarubussnamn Klipper tilldelar). 
-Du ska se två olika adresser.
+Kontrollera att temperaturmätaren btt_eddy_coil dyker upp på din dashboard och visar rumstemperatur.
+
 Starta den guidade temperaturkalibreringen (med de manuella papperstesterna) genom att skriva:
-text TEMPERATURE_PROBE_CALIBRATE PROBE=btt_eddy TARGET=55 STEP=4
+text TEMPERATURE_PROBE_CALIBRATE PROBE=btt_eddy_coil TARGET=55 STEP=4
 Använd koden med försiktighet.🤖 
 
 Prompt att spara till leveransdagen
